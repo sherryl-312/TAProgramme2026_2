@@ -69,7 +69,7 @@ namespace TAProgramme_2.Pages
 			}
 		}
 
-		public void EditTimeRecord()
+		public void EditTimeRecord(IWebDriver driver)
 		{
 			IWebElement editButton = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[5]/td[5]/a[1]"));
 			editButton.Click();
@@ -85,7 +85,7 @@ namespace TAProgramme_2.Pages
 			lastButton.Click();
 			
 		}
-		public void DeleteTimeRecord()
+		public void DeleteTimeRecord(IWebDriver driver)
 		{
 			//Deleting the Record
 			IWebElement deleteButton = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[4]/td[5]/a[2]"));

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace TAProgramme_2.Pages
 {
@@ -10,6 +11,12 @@ namespace TAProgramme_2.Pages
         //Functions or methods that allow users to login to the application
         public void LoginActions(IWebDriver driver)
         {
+			//Open Chrome Browser
+			ChromeOptions options = new ChromeOptions();
+			options.AddUserProfilePreference("profile.password_manager_leak_detection", false);
+			driver = new ChromeDriver(options);
+
+
 			// Launch Turnup Portal
 			driver.Navigate().GoToUrl("http://horse.industryconnect.io");
 			driver.Manage().Window.Maximize();
@@ -27,5 +34,10 @@ namespace TAProgramme_2.Pages
 			loginButton.Click();
 			Thread.Sleep(7000);
 		}
+
+        internal void LoginActions()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
